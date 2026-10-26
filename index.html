@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Dina Issa's personal portfolio: an engineer exploring software development and backend engineering.">
+<meta name="theme-color" content="#f8f7f2">
+<title>DINA ISSA — Ideas into Practice</title>
+<style>
+:root{--bg:#f8f7f2;--card:#fffdf8;--ink:#1c1b18;--mute:#6b675c;--line:#e2ded0;--sun:#f4c542;--green:#4caf7a}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{position:relative;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;line-height:1.7;overflow-x:hidden}
+html[lang=en] .ar,html[lang=ar] .en{display:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{line-height:1.12;font-weight:700}
+em{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400}
+html[lang=ar] em{font-family:inherit;font-style:normal;font-weight:800}
+.eyebrow{display:flex;align-items:center;gap:.6rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:1rem}
+html[lang=ar] .eyebrow{letter-spacing:0;text-transform:none;font-size:.9rem}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--green)}
+#yarn{position:absolute;top:0;inset-inline-start:10px;width:60px;pointer-events:none;z-index:5;overflow:visible}
+#thread{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.site-header{position:fixed;inset-inline:0;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem clamp(16px,4vw,48px);background:rgba(248,247,242,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:1.3rem;text-decoration:none}
+.brand i{color:var(--sun);font-style:normal}
+.nav-links{display:flex;gap:1.4rem;font-size:.95rem}
+.nav-links a{text-decoration:none;color:var(--mute)}
+.nav-links a:hover{color:var(--ink)}
+.language-switch{border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:.3rem 1rem;font:inherit;font-weight:600;cursor:pointer}
+.language-switch:hover{background:var(--ink);color:var(--bg)}
+.section-wrap{max-width:1040px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px) clamp(20px,5vw,48px)}
+main{padding-inline-start:70px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;min-height:100vh;padding-top:110px;padding-bottom:70px}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);letter-spacing:-.02em}
+html[lang=ar] .hero h1{letter-spacing:0;line-height:1.3}
+.hero-description{margin-top:1.3rem;font-size:1.12rem;color:var(--mute);max-width:34rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.button{display:inline-block;padding:.7rem 1.5rem;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-weight:600;transition:transform .2s}
+.button:hover{transform:translateY(-2px)}
+.button-dark{background:var(--ink);color:var(--bg)}
+.small-note{margin-top:1.4rem;font-size:.9rem;color:var(--mute)}
+.
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 520px;
+  padding-bottom: 2.2rem;
+}
+
+.hero-art img {
+  display: block;
+  max-width: 100%;
+}
+
+.portrait {
+  position: relative;
+  z-index: 2;
+  width: min(300px, 72%);
+  height: auto;
+  object-fit: cover;
+  border: 1.5px solid var(--ink);
+  border-radius: 150px 150px 24px 24px;
+  box-shadow: 8px 8px 0 var(--ink);
+  background: var(--sun);
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  object-position: top left;
+}
+
+.portrait{position:relative;z-index:2;width:min(300px,72%);height:auto;border:1.5px solid var(--ink);border-radius:150px 150px 24px 24px;box-shadow:8px 8px 0 var(--ink);background:var(--sun)}
+.art-card{z-index:3;inset:auto auto 70px auto;inset-inline-end:0;width:170px;padding:.9rem;transform:rotate(-4deg)}
+.art-card .art-chip{margin-top:.6rem}
+.shots-title{margin:2.4rem 0 1rem;font-size:1.2rem}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.shot{background:var(--card);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.shot button{border:0;padding:0;background:#1e1e1e;cursor:zoom-in;display:block;border-bottom:1.5px solid var(--ink)}
+.shot img{display:block;width:100%;height:210px;object-fit:cover;object-position:top left}
+.shot figcaption{padding:.9rem 1.1rem;font-size:.92rem;color:var(--mute)}
+.shot b{display:block;color:var(--ink);font-size:1rem}
+dialog.zoom{border:2px solid var(--ink);border-radius:18px;padding:0;max-width:min(92vw,1000px);background:#1e1e1e}
+dialog.zoom::backdrop{background:rgba(28,27,24,.75)}
+dialog.zoom img{display:block;max-width:100%;max-height:82vh;margin:auto}
+dialog.zoom button{position:absolute;top:8px;inset-inline-end:8px;border:0;border-radius:999px;background:var(--sun);font:inherit;font-weight:700;padding:.2rem .9rem;cursor:pointer}
+
+.art-orbit{position:absolute;border:1.5px solid var(--line);border-radius:50%}
+.orbit-one{inset:6% 8%}.orbit-two{inset:22% 24%}
+.art-sun{position:absolute;width:120px;height:120px;border-radius:50%;background:var(--sun);inset-block-start:8%;inset-inline-end:10%}
+.art-card{position:absolute;background:var(--card);border:1.5px solid var(--ink);border-radius:22px;padding:1.2rem;box-shadow:6px 6px 0 var(--ink);transform:rotate(-3deg)}
+.art-card-label{font-size:.72rem;letter-spacing:.14em;font-weight:700;color:var(--mute)}
+html[lang=ar] .art-card-label{letter-spacing:0;font-size:.85rem}
+.art-lines{margin-block:.9rem}
+.art-lines i{display:block;height:8px;border-radius:4px;background:var(--line);margin-block:.5rem}
+.art-lines i:nth-child(2){width:70%}.art-lines i:nth-child(3){width:45%;background:var(--sun)}
+.art-chip{display:inline-block;background:var(--ink);color:var(--sun);border-radius:10px;padding:0 .7rem;font-family:ui-monospace,Menlo,monospace;direction:ltr}
+.art-star{position:absolute;font-size:1.6rem}.star-one{inset-block-start:12%;inset-inline-start:6%}.star-two{inset-block-end:22%;inset-inline-end:4%}
+.art-caption{position:absolute;inset-inline:0;bottom:0;text-align:center;font-size:.9rem;color:var(--mute)}
+.section-block{padding-block:5rem;border-top:1px solid var(--line)}
+.section-heading{margin-bottom:2rem;max-width:36rem}
+.section-heading h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.section-heading p:last-child{color:var(--mute);margin-top:.6rem}
+.project-card{display:grid;grid-template-columns:260px 1fr;background:var(--card);border:1.5px solid var(--ink);border-radius:24px;overflow:hidden}
+.project-visual{background:var(--sun);display:flex;flex-direction:column;justify-content:space-between;padding:1.4rem;min-height:220px;border-inline-end:1.5px solid var(--ink)}
+.yarn-mark{display:flex;flex-direction:column;gap:10px}
+.yarn-mark span{height:12px;border-radius:12px;background:var(--ink)}
+.yarn-mark span:nth-child(2){width:75%}.yarn-mark span:nth-child(3){width:50%}
+.visual-label{font-family:ui-monospace,Menlo,monospace;font-weight:700;direction:ltr}
+.project-info{padding:1.6rem}
+.project-meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+html[lang=ar] .project-meta{letter-spacing:0;text-transform:none;font-size:.9rem}
+.project-status{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:0 .8rem}
+.project-info h3{font-size:1.6rem;margin-block:.6rem .4rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-block:1rem}
+.tags span,.chips li{border:1.5px solid var(--ink);border-radius:999px;padding:.1rem .9rem;font-size:.9rem;font-weight:600;background:var(--bg)}
+.honest-note{font-size:.9rem;color:var(--mute)}
+.empty-project{display:flex;gap:1rem;align-items:center;margin-top:1.2rem;padding:1.3rem;border:1.5px dashed var(--ink);border-radius:20px}
+.plus-mark{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sun);font-size:1.5rem;font-weight:700;flex:none}
+.empty-project p{color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.box{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:1.5rem}
+.box h3{font-size:1.2rem;margin-bottom:.2rem}
+.box .meta{color:var(--mute);font-size:.92rem}
+.box p+p{margin-top:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0}
+.list{list-style:none;padding:0}
+.list li{padding-block:1rem;border-bottom:1px solid var(--line)}
+.list li:first-child{padding-top:0}
+.list h3{font-size:1.2rem}
+.list p{color:var(--mute)}
+.about-section{background:var(--card);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding-block:5rem}
+.about-grid h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.about-copy p{color:var(--mute)}.about-copy p+p{margin-top:1rem}
+.principles{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.principles span{background:var(--sun);border-radius:999px;padding:0 1rem;font-weight:600;color:var(--ink)}
+.contact-section{padding-block:5rem}
+.contact-section h2{font-size:clamp(2rem,5vw,3.4rem);max-width:16ch}
+html[lang=ar] .contact-section h2{max-width:none}
+.contact-section>p{color:var(--mute);margin-top:.8rem}
+.links{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.links a{display:inline-block;padding:.6rem 1.3rem;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:600}
+.links a:hover{background:var(--ink);color:var(--bg)}
+.site-footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;padding:1.5rem clamp(20px,5vw,48px) 1.5rem 80px;border-top:1px solid var(--line);color:var(--mute);font-size:.9rem}
+.site-footer:lang(ar){padding:1.5rem 80px 1.5rem clamp(20px,5vw,48px)}
+@media(max-width:820px){
+.nav-links{display:none}
+main{padding-inline-start:52px}
+#yarn{width:44px;inset-inline-start:6px}
+.hero,.about-grid,.two{grid-template-columns:1fr}
+.hero{min-height:auto}
+.hero-art{height:470px}.shots{grid-template-columns:1fr}
+.project-card{grid-template-columns:1fr}
+.project-visual{border-inline-end:0;border-bottom:1.5px solid var(--ink)}
+.site-footer{padding-inline-start:60px}
+}
+</style>
+</head>
+<body>
+<svg id="yarn" aria-hidden="true"><path id="thread" d=""/><g id="ball"><circle r="12" fill="#f4c542" stroke="#1c1b18" stroke-width="2.5"/><path d="M-9 -3 Q0 -8 9 -3 M-10 3 Q0 -2 10 3 M-5 8 Q0 5 7 7" fill="none" stroke="#1c1b18" stroke-width="1.6" stroke-linecap="round"/></g></svg>
+
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="DINA ISSA home"><span class="en">DINA ISSA</span><span class="ar">دينا عيسى</span><i>.</i></a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#projects"><span class="en">Projects</span><span class="ar">المشاريع</span></a>
+    <a href="#background"><span class="en">Background</span><span class="ar">الخلفية</span></a>
+    <a href="#services"><span class="en">Services</span><span class="ar">الخدمات</span></a>
+    <a href="#about"><span class="en">About</span><span class="ar">نبذة</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span></a>
+  </nav>
+  <button class="language-switch" id="langBtn" type="button" aria-label="Switch language">العربية</button>
+</header>
+
+<main>
+<section class="hero section-wrap" id="home">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="status-dot"></span><span class="en">Engineer · Aspiring developer</span><span class="ar">مهندسة · مطورة تحت التطوير</span></p>
+    <h1 class="en">Turning ideas into <em>practical solutions.</em></h1>
+    <h1 class="ar">بحوّل الأفكار لـ <em>حلول عملية.</em></h1>
+    <p class="hero-description en">I’m Eng. Dina Issa, an engineer exploring my path in software development, with a growing focus on backend engineering. I enjoy turning ideas into practical projects, solving problems, and learning by building.</p>
+    <p class="hero-description ar">أنا م. دينا عيسى، مهندسة بستكشف طريقي في تطوير البرمجيات، وبركّز أكتر على الباك إند. بحب أحوّل الأفكار لمشاريع عملية، وأحلّ المشاكل، وأتعلم بالبناء.</p>
+    <div class="hero-actions">
+      <a class="button button-dark" href="#projects"><span class="en">Explore my work ↘</span><span class="ar">شوف أعمالي ↙</span></a>
+      <a class="button" href="#about"><span class="en">A little about me</span><span class="ar">نبذة صغيرة عني</span></a>
+    </div>
+    <p class="small-note en">A work in progress, just like every good learning journey.</p>
+    <p class="small-note ar">لسه شغّالة عليه، زي أي رحلة تعلّم حلوة.</p>
+  </div>
+  <div class="hero-art">
+    <div class="art-orbit orbit-one" aria-hidden="true"></div><div class="art-orbit orbit-two" aria-hidden="true"></div><div class="art-sun" aria-hidden="true"></div>
+    <img class="portrait" src="images/dina.jpg" width="783" height="1024" alt="Portrait of Dina Issa holding a laptop">
+    <div class="art-card" aria-hidden="true">
+      <span class="art-card-label en">IDEA → BUILD</span><span class="art-card-label ar">فكرة ← تنفيذ</span>
+      <div class="art-chip">{ }</div>
+    </div>
+    <span class="art-star star-one" aria-hidden="true">✳</span><span class="art-star star-two" aria-hidden="true">✦</span>
+    <span class="art-caption en">Curious by nature. Building step by step.</span>
+    <span class="art-caption ar">فضولية بطبعي. وببني خطوة خطوة.</span>
+  </div>
+</section>
+
+<section class="section-wrap section-block" id="projects">
+  <div class="section-heading">
+    <p class="eyebrow"><span class="en">A work in progress</span><span class="ar">شغل تحت التنفيذ</span></p>
+    <h2 class="en">Projects &amp; experiments</h2><h2 class="ar">مشاريع وتجارب</h2>
+    <p class="en">A place to document what I’m learning by making.</p><p class="ar">مكان أوثّق فيه اللي بتعلّمه وأنا بصنع.</p>
+  </div>
+  <article class="project-card">
+    <div class="project-visual" aria-hidden="true">
+      <div class="yarn-mark"><span></span><span></span><span></span></div>
+      <div class="visual-label">YC / API</div>
+    </div>
+    <div class="project-info">
+      <div class="project-meta"><span class="en">Backend · Learning project</span><span class="ar">باك إند · مشروع تعلّم</span><span class="project-status"><span class="en">In progress</span><span class="ar">قيد التنفيذ</span></span></div>
+      <h3>Yarn Craft API</h3>
+      <p class="en">A learning project for a crochet platform, exploring REST APIs, database design, and backend structure with Node.js, Express, and PostgreSQL. It models users, categories, products, carts, and orders, and protects routes with JWT authentication.</p>
+      <p class="ar">مشروع تعلّم لمنصة كروشية، بستكشف فيه REST APIs وتصميم قواعد البيانات وهيكلة الباك إند باستخدام Node.js وExpress وPostgreSQL. فيه المستخدمين والتصنيفات والمنتجات والسلة والطلبات، وبيحمي المسارات بتسجيل دخول JWT.</p>
+      <div class="tags"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>TypeORM</span><span>JWT</span></div>
+      <p class="honest-note en">Currently in development. Details and features will be updated as the project grows.</p>
+      <p class="honest-note ar">لسه تحت التطوير. التفاصيل والمميزات هتتحدّث مع نموّ المشروع.</p>
+      </div>
+  </article>
+  <h3 class="shots-title"><span class="en">Inside the code</span><span class="ar">جوه الكود</span></h3>
+  <div class="shots">
+    <figure class="shot"><button type="button" aria-label="Enlarge: Code screenshot of yarnDb.js, a TypeORM data source for PostgreSQL listing the project entities"><img src="images/code-database.png" alt="Code screenshot of yarnDb.js, a TypeORM data source for PostgreSQL listing the project entities" loading="lazy"></button>
+      <figcaption><b class="en">Database connection</b><b class="ar">الاتصال بقاعدة البيانات</b><span class="en">The TypeORM data source connects to PostgreSQL and registers every entity.</span><span class="ar">الـ data source بتاع TypeORM بيتصل بـ PostgreSQL وبيسجّل كل الـ entities.</span></figcaption></figure>
+    <figure class="shot"><button type="button" aria-label="Enlarge: Code screenshot of the entities folder and the order entity with status, total amount and shipping address"><img src="images/code-entities.png" alt="Code screenshot of the entities folder and the order entity with status, total amount and shipping address" loading="lazy"></button>
+      <figcaption><b class="en">Project structure and order model</b><b class="ar">هيكل المشروع وموديل الطلب</b><span class="en">Separate folders for entities, middleware, and repositories. The order carries status, total, and shipping address.</span><span class="ar">فولدرات منفصلة للـ entities والـ middleware والـ repositories. والطلب فيه الحالة والإجمالي وعنوان الشحن.</span></figcaption></figure>
+    <figure class="shot"><button type="button" aria-label="Enlarge: Code screenshot of an auth middleware that verifies a Bearer JWT token"><img src="images/code-auth.png" alt="Code screenshot of an auth middleware that verifies a Bearer JWT token" loading="lazy"></button>
+      <figcaption><b class="en">Authentication</b><b class="ar">تسجيل الدخول والصلاحيات</b><span class="en">Middleware that checks the Bearer token and rejects requests without a valid JWT.</span><span class="ar">Middleware بيتحقق من الـ Bearer token وبيرفض أي طلب من غير JWT صالح.</span></figcaption></figure>
+    <figure class="shot"><button type="button" aria-label="Enlarge: Code screenshot of the server start function that initializes the database then listens on a port"><img src="images/code-server.png" alt="Code screenshot of the server start function that initializes the database then listens on a port" loading="lazy"></button>
+      <figcaption><b class="en">Server startup</b><b class="ar">تشغيل السيرفر</b><span class="en">The server starts listening only after the database connection succeeds.</span><span class="ar">السيرفر مابيشتغلش غير بعد ما الاتصال بقاعدة البيانات ينجح.</span></figcaption></figure>
+    </div>
+
+  <div class="empty-project">
+    <span class="plus-mark">+</span>
+    <div><h3 class="en">The next project starts here</h3><h3 class="ar">المشروع الجاي يبدأ هنا</h3>
+      <p class="en">More projects will be added as I build, test, and learn.</p><p class="ar">هضيف مشاريع أكتر وأنا ببني وأجرّب وأتعلم.</p></div>
+  </div>
+</section>
+
+<section class="section-wrap section-block" id="background">
+  <div class="section-heading"><h2 class="en">Education &amp; experience</h2><h2 class="ar">التعليم والخبرات</h2></div>
+  <div class="two">
+    <div class="box">
+      <h3 class="en">Computer and Control Engineering</h3><h3 class="ar">هندسة الحاسبات والتحكم</h3>
+      <p class="meta en">Faculty of Engineering, Suez Canal University</p><p class="meta ar">كلية الهندسة، جامعة قناة السويس</p>
+    </div>
+    <div class="box">
+      <h3 class="en">Backend developer</h3><h3 class="ar">مطورة باك إند</h3>
+      <p class="meta en">Yarn Craft API · crochet store project</p><p class="meta ar">Yarn Craft API · مشروع متجر كروشية</p>
+      <p class="en">Built the backend and database for an online crochet yarn store.</p><p class="ar">بنيت الباك إند وقاعدة البيانات لمتجر أونلاين لخيوط الكروشية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-wrap section-block" id="skills">
+  <div class="section-heading"><h2 class="en">Skills &amp; tools</h2><h2 class="ar">المهارات والأدوات</h2></div>
+  <div class="two">
+    <ul class="list">
+      <li><h3 class="en">Backend development</h3><h3 class="ar">تطوير الباك إند</h3><p class="en">REST APIs and backend structure.</p><p class="ar">REST APIs وهيكلة الباك إند.</p></li>
+      <li><h3>SQL</h3><p class="en">Database design and clear queries.</p><p class="ar">تصميم قواعد البيانات واستعلامات واضحة.</p></li>
+      <li><h3 class="en">Photo and video editing</h3><h3 class="ar">تعديل الصور والفيديو</h3><p class="en">Cleanup, colour, and cutting footage.</p><p class="ar">تنضيف وألوان وتقطيع اللقطات.</p></li>
+    </ul>
+    <ul class="chips" style="align-content:flex-start">
+      <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>TypeORM</li><li>SQL</li><li><span class="en">Photo editing</span><span class="ar">تعديل صور</span></li><li><span class="en">Video editing</span><span class="ar">تعديل فيديو</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-wrap section-block" id="services">
+  <div class="section-heading"><h2 class="en">Services</h2><h2 class="ar">الخدمات</h2></div>
+  <ul class="list">
+    <li><h3 class="en">Backend for your app or store</h3><h3 class="ar">باك إند لتطبيقك أو متجرك</h3><p class="en">From the first table to a working server.</p><p class="ar">من أول جدول لحد سيرفر شغّال.</p></li>
+    <li><h3 class="en">SQL databases and queries</h3><h3 class="ar">قواعد بيانات واستعلامات SQL</h3><p class="en">Clean structure and data you can trust.</p><p class="ar">هيكل نضيف وبيانات تقدر تثق فيها.</p></li>
+    <li><h3 class="en">Photo and video editing</h3><h3 class="ar">تعديل الصور والفيديو</h3><p class="en">Polished images and clips for your product or page.</p><p class="ar">صور وفيديوهات متظبطة لمنتجك أو صفحتك.</p></li>
+  </ul>
+  <div class="empty-project" style="margin-top:2rem">
+    <span class="plus-mark">“</span>
+    <div><h3 class="en">Testimonials</h3><h3 class="ar">آراء العملاء</h3>
+      <p class="en">No client words yet. Your project could be the first one.</p><p class="ar">لسه مفيش آراء عملاء. مشروعك ممكن يكون الأول.</p></div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="section-wrap about-grid">
+    <div>
+      <p class="eyebrow"><span class="en">The person behind the projects</span><span class="ar">الشخص اللي ورا المشاريع</span></p>
+      <h2 class="en">Learning by doing.<br><em>Growing with every build.</em></h2>
+      <h2 class="ar">باتعلّم بالتطبيق.<br><em>وبكبر مع كل مشروع.</em></h2>
+    </div>
+    <div class="about-copy">
+      <p class="en">I’m an engineer exploring my professional direction through practical projects. I like creative problem-solving, making ideas tangible, and understanding how things work, not just copying the answer.</p>
+      <p class="ar">أنا مهندسة بستكشف اتجاهي المهني من خلال مشاريع عملية. بحب حلّ المشاكل بشكل إبداعي، وإني أجسّد الأفكار، وأفهم الحاجة بتشتغل إزاي، مش بس أنسخ الإجابة.</p>
+      <p class="en">This portfolio is a living record of my progress: what I’m building, what I’m learning, and where I’m headed next.</p>
+      <p class="ar">البورتفوليو ده سجل حي لتقدّمي: بببني إيه، وبتعلّم إيه، وهروح فين بعد كده.</p>
+      <div class="principles"><span class="en">Curiosity</span><span class="en">Practical learning</span><span class="en">Steady progress</span><span class="ar">الفضول</span><span class="ar">التعلّم العملي</span><span class="ar">تقدّم ثابت</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-wrap contact-section" id="contact">
+  <p class="eyebrow"><span class="en">Let’s connect</span><span class="ar">نتواصل</span></p>
+  <h2 class="en">Have an idea or opportunity?</h2><h2 class="ar">عندك فكرة أو فرصة؟</h2>
+  <p class="en">Send me a message and tell me what you’re building.</p><p class="ar">ابعتلي رسالة وقولي بتبني إيه.</p>
+  <!-- EDIT: replace each href with your own link -->
+  <ul class="links">
+    <li><a href="mailto:YOUR_EMAIL@example.com"><span class="en">Email</span><span class="ar">الإيميل</span></a></li>
+    <li><a href="https://www.linkedin.com/in/YOUR_PROFILE">LinkedIn</a></li>
+    <li><a href="https://github.com/YOUR_USERNAME">GitHub</a></li>
+    <li><a href="https://wa.me/YOUR_NUMBER">WhatsApp</a></li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <a class="brand" href="#home"><span class="en">DINA ISSA</span><span class="ar">دينا عيسى</span><i>.</i></a>
+  <p class="en">Built with curiosity, one step at a time. © 2026 Dina Issa</p>
+  <p class="ar">اتبنى بالفضول، خطوة خطوة. © 2026 دينا عيسى</p>
+  <a href="#home"><span class="en">Back to top ↑</span><span class="ar">لفوق ↑</span></a>
+</footer>
+
+<dialog class="zoom" id="zoom"><button type="button" id="zoomClose"><span class="en">Close</span><span class="ar">إغلاق</span></button><img id="zoomImg" alt=""></dialog>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('langBtn');
+  var thread=document.getElementById('thread'),ball=document.getElementById('ball'),svg=document.getElementById('yarn');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,len=0;
+  function build(){
+    var h=document.documentElement.scrollHeight,w=svg.getBoundingClientRect().width||60,c=w/2,a=w*.9,b=w*.1;
+    svg.setAttribute('height',h);svg.setAttribute('viewBox','0 0 '+w+' '+h);
+    var d='M'+c+' 90',y=90,flip=false;
+    while(y<h-80){d+=' C'+(flip?b:a)+' '+(y+70)+' '+(flip?a:b)+' '+(y+170)+' '+c+' '+(y+240);y+=240;flip=!flip}
+    thread.setAttribute('d',d);len=thread.getTotalLength();thread.style.strokeDasharray=len;draw();
+  }
+  function draw(){
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    var p=reduce?1:Math.min(1,Math.max(0,max>0?window.scrollY/max:0));
+    thread.style.strokeDashoffset=len*(1-p);
+    var pt=thread.getPointAtLength(len*p);
+    ball.setAttribute('transform','translate('+pt.x+' '+pt.y+') rotate('+(p*720)+')');
+  }
+  function setLang(l){
+    root.lang=l;root.dir=l==='ar'?'rtl':'ltr';btn.textContent=l==='ar'?'English':'العربية';
+    try{localStorage.setItem('lang',l)}catch(e){}
+    document.title=l==='ar'?'دينا عيسى — أفكار لحلول عملية':'DINA ISSA — Ideas into Practice';
+    requestAnimationFrame(build);
+  }
+  var zoom=document.getElementById('zoom'),zi=document.getElementById('zoomImg');
+  document.querySelectorAll('.shot button').shots=document.querySelectorAll('.shot button');
+  document.querySelectorAll('.shot button').forEach(function(b){b.addEventListener('click',function(){var im=b.querySelector('img');zi.src=im.src;zi.alt=im.alt;zoom.showModal()})});
+  document.getElementById('zoomClose').addEventListener('click',function(){zoom.close()});
+  zoom.addEventListener('click',function(e){if(e.target===zoom)zoom.close()});
+  btn.addEventListener('click',function(){setLang(root.lang==='en'?'ar':'en')});
+  window.addEventListener('scroll',draw,{passive:true});
+  window.addEventListener('resize',build);
+  window.addEventListener('load',build);
+  var s=null;try{s=localStorage.getItem('lang')}catch(e){}
+  setLang(s==='ar'?'ar':'en');
+})();
+</script>
+</body>
+</html>
